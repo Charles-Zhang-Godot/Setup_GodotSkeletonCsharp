@@ -17,7 +17,7 @@ func _on_file_dialog_file_selected(path):
 		var gltf_scene_root_node = gltf_document_load.generate_scene(gltf_state_load)
 		add_child(gltf_scene_root_node)
 		
-		gltf_scene_root_node.get_node("AnimationPlayer").play("EmptyAction")
+		gltf_scene_root_node.get_node("AnimationPlayer").play("Armature") # Notice in Blender might have modeled EmptyAction but during playback we actually play the baked animation
 	else:
 		%ErrorLabel.text = "Couldn't load glTF scene (error code: %s)." % error_string(error)
 	
